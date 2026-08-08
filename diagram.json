@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "author": "IoT Security Node",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "sonar1", "top": -100, "left": 140, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:5V", "sonar1:VCC", "red", [ "v0" ] ],
+    [ "esp:GND.1", "sonar1:GND", "black", [ "v0" ] ],
+    [ "esp:D5", "sonar1:TRIG", "orange", [ "v0" ] ],
+    [ "esp:D18", "sonar1:ECHO", "green", [ "v0" ] ]
+  ]
+}
