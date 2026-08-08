@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "author": "Smart Irrigation System",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -140, "left": 150, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": 120, "left": 150, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": 120, "left": 280, "attrs": { "color": "blue" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": 200, "left": 280, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "esp:3V3", "pot1:VCC", "red", [ "v0" ] ],
+    [ "esp:GND.1", "pot1:GND", "black", [ "v0" ] ],
+    [ "esp:D34", "pot1:SIG", "green", [ "v0" ] ],
+    [ "esp:VIN", "relay1:VCC", "red", [ "v0" ] ],
+    [ "esp:GND.2", "relay1:GND", "black", [ "v0" ] ],
+    [ "esp:D26", "relay1:IN", "orange", [ "v0" ] ],
+    [ "esp:VIN", "relay1:NO", "red", [ "v0" ] ],
+    [ "relay1:COM", "led1:A", "green", [ "v0" ] ],
+    [ "led1:C", "r1:1", "black", [ "v0" ] ],
+    [ "r1:2", "esp:GND.3", "black", [ "v0" ] ]
+  ]
+}
